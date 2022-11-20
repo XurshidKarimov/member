@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import "nullstyle.scss";
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: cadetblue;
+    @include flex(center, center);
+}
+
+.member {
+    width: 1100px;
+    border-radius: 10px;
+    display: flex;
+    overflow: hidden;
+
+    &-content {
+        @include flex($fDirection: column);
+        padding: 80px 40px 30px 40px;
+        background-color: white;
+        flex-grow: 1;
+
+        &__title {
+            @include font(45, 400, inherit, none, #000);
+            margin-bottom: 15px;
+        }
+
+        &__subtitle {
+            @include font(16, 400, inherit, none, #DDD);
+            margin-bottom: 40px;
+        }
+
+        &__signup-list {
+            @include flex($fDirection: column, $rGap: 20);
+        }
+
+        &__signup-item {
+            box-shadow: 0 0 1px 1px lightgray;
+            border-radius: 5px;
+            transition: linear .2s;
+
+            &:hover {
+                box-shadow: 0 5px 5px 5px lightgrey;
+
+                & * {
+                    color: #000;
+                }
+            }
+
+            & a {
+                padding: 25px;
+                width: 100%;
+                display: flex;
+
+                & svg {
+                    width: 20px;
+                    align-self: center;
+                }
+
+                & span {
+                    @include font(16, 700, inherit, uppercase, darkgray);
+                    align-self: center;
+                    flex-grow: 1;
+                    text-align: center;
+                }
+
+            }
+        }
+
+        &__emailsign {
+            @include flex(flex-end, space-between);
+            flex-grow: 1;
+
+            &__title {
+                @include font(14, 700, inherit, none, #000);
+            }
+
+            &-link {
+                @include font(14, 700, inherit, uppercase, gray);
+                transition: linear .2s;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+        }
+    }
+
+    &-imgside {
+        width: 400px;
+        min-height: 100%;
+
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
